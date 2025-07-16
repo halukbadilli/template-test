@@ -1,0 +1,54 @@
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom right, #3b82f6, #7dd3fc);
+    }
+    .content-card {
+      backdrop-filter: blur(12px);
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .service-icon {
+      transition: all 0.3s ease;
+    }
+    .service-card {
+      backdrop-filter: blur(12px);
+      background-color: rgba(255, 255, 255, 0.15);
+      transition: all 0.3s ease;
+    }
+    .service-card:hover .service-icon {
+      transform: scale(1.1);
+      transform: translateY(-5px);
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Randevu Modal Stilleri */
+#randevu-modal {
+  transition: opacity 0.3s ease;
+}
+
+#randevu-modal .bg-white {
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form elemanları focus stilleri */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+@media (max-width: 940px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+}

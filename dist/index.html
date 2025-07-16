@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link href="./style.css" rel="stylesheet">
+  <link href="./my_style.css" rel="stylesheet">
+  <title>Sirbad Belgelendirme</title>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-500 to-sky-200">
+  <!-- Logo - Sol Üstte, Sabit -->
+  <section id="logo">
+    <div class="fixed hidden lg:block top-2 left-8 text-white font-bold text-2xl z-50 backdrop-blur-2xl bg-white/60 border border-white/70 
+               shadow-2xl p-3 mt-2 rounded-lg transparent">
+      <img src="img/sirbad_logo.png" alt="Sirbad Logo" class="h-16 md:h-20">
+    </div>
+  </section>
+  <!-- Navbar - Sayfanın Tam Ortasında -->
+  <section>
+    <nav class="fixed top-4 md:top-8 left-1/2 transform -translate-x-1/2 
+                w-[90%] 2xl:w-[37%] xl:w-[45%] sm:w-[55%]
+                px-4 py-3 items-center
+                flex flex-wrap justify-between md:justify-center
+                gap-2 md:gap-6 
+                backdrop-blur-lg bg-white/10 border border-white/20 
+                rounded-xl shadow-lg 
+                transition-all duration-300 z-10
+                min-h-[56px]">
+      <div class="font-bold text-white text-lg lg:hidden backdrop-blur-2xl bg-white/60 border border-white/70 
+                  shadow-2xl p-1 mt-1 rounded-lg logo-container">
+        <img src="img/sirbad_logo.png" alt="Sirbad Belgelendirme" class="h-12">
+      </div>
+      <!-- Hamburger Menü Butonu (Küçük Ekranlar İçin) -->
+      <button id="menu-toggle" class="md:hidden text-white focus:outline-none p-2" aria-expanded="false">
+        <svg class="h-6 w-6 hamburger-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+        <svg class="h-6 w-6 close-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <!-- Navigasyon Listesi -->
+      <ul id="nav-menu" class="hidden flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-6">
+        <li><a href="index.html" class="text-white hover:bg-white/10 hover:backdrop-blur-xl hover:scale-110 transition-all duration-100 ease-in px-3 py-2 rounded-xl flex items-center">Anasayfa</a></li>
+        <li class="relative">
+          <button id="dropdown-toggle-kurumsal" class="text-white hover:bg-white/10 hover:backdrop-blur-xl hover:scale-110 transition-all duration-100 ease-in-out px-3 py-2 rounded-xl flex items-center" aria-haspopup="true" aria-expanded="false">
+            Kurumsal
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <ul id="dropdown-menu-kurumsal" class="hidden absolute bg-white/80 backdrop-blur-lg border border-white/20 rounded-lg mt-2 w-40 shadow-lg z-50 overflow-hidden">
+            <li><a href="hakkimizda.html" class="block px-4 py-2 text-blue-400 hover:bg-blue-300 hover:text-white rounded">Hakkımızda</a></li>
+            <li><a href="hizmetler.html" class="block px-4 py-2 text-blue-400 hover:bg-blue-300 hover:text-white rounded">Hizmetler</a></li>
+            <li><a href="documents.html" class="block px-4 py-2 text-blue-400 hover:bg-blue-300 hover:text-white rounded">Dökümanlar</a></li>
+            <li><a href="#" class="block px-4 py-2 text-blue-400 hover:bg-blue-300 hover:text-white rounded">Referanslar</a></li>
+          </ul>
+        </li>
+        <li class="relative">
+          <button id="dropdown-toggle-rapor" class="text-white hover:bg-white/10 hover:backdrop-blur-xl hover:scale-110 transition-all duration-100 ease-in-out px-3 py-2 rounded-xl flex items-center" aria-haspopup="true" aria-expanded="false">
+            Rapor
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <ul id="dropdown-menu-rapor" class="hidden absolute bg-white/80 backdrop-blur-lg border border-white/20 rounded-lg mt-2 w-40 shadow-lg overflow-hidden">
+            <li><a href="#" class="block px-4 py-2 text-blue-400 hover:bg-blue-300 hover:text-white rounded">Asansör Raporu</a></li>
+            <li><a href="#" class="block px-4 py-2 text-blue-400 hover:bg-blue-300 hover:text-white rounded">İş Ekipman Raporu</a></li>
+          </ul>
+        </li>
+        <li><a href="#" class="text-white hover:bg-white/10 hover:backdrop-blur-xl hover:scale-110 transition-all duration-100 ease-in px-3 py-2 rounded-xl flex items-center">İletişim</a></li>
+      </ul>
+    </nav>
+  </section>
+  <main class="pt-48 pb-32 w-full items-center">
+    <!-- Swiper Container for Sections -->
+    <div class="swiper mySwiper w-full bg-white/20 backdrop-blur-md border border-white/10 shadow-lg px-4 sm:px-8 py-10 max-h-[900px]">
+      <div class="swiper-wrapper mb-2 mt-9">
+        <!-- SECTION 1 - Asansör Periyodik Kontrol -->
+        <div class="swiper-slide px-4 mb-6 mt-4 sm:px-6 md:px-8">
+          <div class="flex flex-col-reverse md:flex-row gap-8 items-center bg-white/20 backdrop-blur-md border border-white/10 shadow-md p-6 w-full max-h-[700px] rounded-xl max-w-7xl mx-auto">
+            <!-- Metin -->
+            <div class="w-full">
+              <h1 class="text-3xl font-bold text-blue-600 mb-4 text-center md:text-left">Asansör Periyodik Kontrol</h1>
+              <p class="text-gray-600 text-lg leading-relaxed mb-6 text-center md:text-left max-w-md">
+                Sirbad Belgelendirme olarak asansörlerin güvenliğini sağlamak amacıyla kapsamlı kontroller gerçekleştiriyoruz.
+              </p>
+              <div class="flex justify-center md:justify-start">
+                <a href="#iletisim" class="w-full md:w-auto text-center px-6 py-3 
+                  bg-blue-500 text-white font-semibold rounded-lg shadow-md 
+                  hover:bg-blue-600 transition-all duration-300 randevu-button">
+                  Randevu Al
+                </a>
+              </div>
+            </div>
+            <!-- Görsel -->
+            <div class="flex justify-center w-full">
+              <img src="img/asansor_kontrol.jpg" alt="Asansör Kontrolü" class="w-full max-w-sm rounded-xl shadow-xl hover:scale-105 transition-transform duration-500">
+            </div>
+          </div>
+        </div>
+        <!-- SECTION 2 - İş Ekipmanı Denetimi -->
+        <div class="swiper-slide px-4 mb-6 mt-4 sm:px-6 md:px-8">
+          <div class="flex flex-col-reverse md:flex-row-reverse mb-6 gap-8 items-center bg-white/20 backdrop-blur-md border border-white/10 shadow-md p-6 w-full rounded-xl max-h-[700px] max-w-7xl mx-auto">
+            <!-- Metin -->
+            <div class="w-full">
+              <h2 class="text-3xl font-bold text-blue-600 mb-4 text-center md:text-left">
+                İş Ekipmanı Periyodik Kontrol
+              </h2>
+              <p class="text-gray-600 text-lg leading-relaxed mb-6 text-center md:text-left">
+                İş sağlığı ve güvenliği kapsamında, iş ekipmanlarının düzenli kontrollerini yönetmeliklere uygun şekilde gerçekleştiriyoruz.
+              </p>
+              <div class="flex justify-center md:justify-start">
+                <a href="#iletisim" class="w-full md:w-auto text-center px-6 py-3 
+                  bg-blue-500 text-white font-semibold rounded-lg shadow-md 
+                  hover:bg-blue-600 transition-all duration-300 randevu-button">
+                  Randevu Al
+                </a>
+              </div>
+            </div>
+            <!-- Görsel -->
+            <div class="flex justify-center w-full">
+              <img src="img/asansor_kontrol.jpg" alt="Ekipman Denetimi" class="w-full max-w-sm rounded-xl shadow-xl hover:scale-105 transition-transform duration-500">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Swiper Navigation Buttons -->
+      <div class="swiper-button-next hidden md:block !text-white !w-8 !h-8"></div>
+      <div class="swiper-button-prev hidden md:block !text-white !w-8 !h-8"></div>
+      <!-- Swiper Pagination -->
+      <div class="swiper-pagination mt-10 md:mt-8 py-3"></div>
+    </div>
+    <!-- Hakkımızda -->
+    <div class="flex justify-center w-full mt-40">
+      <div class="w-full md:w-1/2 border-b-2 border-white mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 text-center">Hakkımızda</h2>
+      </div>
+    </div>
+    <div class="gap-8 items-center justify-center bg-white/20 backdrop-blur-md border border-white/10 shadow-md p-6 w-full mx-auto mt-8 mb-10">
+      <div class="flex justify-center w-full">
+        <h1 class="text-4xl font-bold text-blue-800 mb-2 text-center md:text-center mt-4">SİRBAD BELGELENDİRME</h1>
+      </div>
+      <div class="flex flex-col-reverse md:flex-row gap-8 items-center bg-white/50 backdrop-blur-md border border-white/10 shadow-md p-6 w-full rounded-xl max-w-7xl mx-auto mt-6 mb-6">
+        <!-- Logo -->
+        <div class="flex justify-center items-stretch w-full md:w-1/2">
+          <div class="flex items-center justify-center w-full h-full p-6 mb-6">
+            <img src="img/AB-0741-M.M-removebg-preview.png" alt="turkakLogo" class="object-contain h-full max-h-[400px]">
+          </div>
+        </div>
+        <!-- Paragraf -->
+        <div class="w-full md:w-1/2 md:justify-start flex items-center mb-4 py-4">
+          <p class="text-lg font-semibold text-gray-600 text-left">
+            2022 yılında, alanında uzman ve deneyimli mühendislerden oluşan dinamik kadromuzla denetim ve belgelendirme faaliyetlerine başlayarak sektördeki güvenilir markalardan biri haline geldik. TS EN ISO/IEC 17020 standardı kapsamında akredite olan A Tipi Muayene Kuruluşu unvanımızla, asansör sistemlerinin periyodik kontrollerinde uluslararası standartlara uygun şekilde hizmet vermekteyiz. <br><br>
+            Faaliyet alanlarımızı sürekli genişleterek; Kaldırma ve İletme Ekipmanları, Basınçlı Kap ve Tesisatlar, Elektriksel Güvenlik Ölçümleri gibi kritik alanlarda da uzman denetim hizmetleri sunmaktayız. Her bir denetim sürecinde; güvenlik, kalite ve yasal mevzuata uyum konularında titiz çalışmalar yürütmekteyiz. <br><br>
+            Müşteri memnuniyetini ön planda tutan anlayışımızla, sektörün ihtiyaçlarına yönelik özel çözümler üretiyor ve teknolojik altyapımızla hızlı, güvenilir raporlama sistemleri geliştiriyoruz. Uzman ekibimiz ve son teknoloji ekipmanlarımızla, işletmelerin yasal yükümlülüklerini en verimli şekilde yerine getirmelerine destek oluyoruz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="fixed bottom-0 left-0 w-full bg-white/10 backdrop-blur-lg border-t border-white/20 py-4 z-50">
+    <div class="text-center text-white text-sm">
+      © 2023 Sirbad Belgelendirme. Tüm hakları saklıdır.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

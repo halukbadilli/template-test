@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link href="./style.css" rel="stylesheet">
+  <link href="./my_style.css" rel="stylesheet">
+  <title>Sirbad Belgelendirme</title>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-500 to-sky-200">
+  <!-- Logo - Sol Üstte, Sabit -->
+  <section id="logo">
+    <div class="fixed hidden lg:block top-2 left-8 text-white font-bold text-2xl z-50 backdrop-blur-2xl bg-white/60 border border-white/70 
+               shadow-2xl p-3 mt-2 rounded-lg transparent">
+      <img src="img/sirbad_logo.png" alt="Sirbad Logo" class="h-16 md:h-20">
+    </div>
+  </section>
+  <!-- Navbar - Sayfanın Tam Ortasında -->
+  <section>
+    <nav class="fixed top-4 md:top-8 left-1/2 transform -translate-x-1/2 
+                w-[90%] 2xl:w-[37%] xl:w-[45%] sm:w-[55%]
+                px-4 py-3 items-center
+                flex flex-wrap justify-between md:justify-center
+                gap-2 md:gap-6 
+                backdrop-blur-lg bg-white/10 border border-white/20 
+                rounded-xl shadow-lg 
+                transition-all duration-300 z-10
+                min-h-[56px]">
+      <div class="font-bold text-white text-lg lg:hidden backdrop-blur-2xl bg-white/60 border border-white/70 
+                  shadow-2xl p-1 mt-1 rounded-lg logo-container">
+        <img src="img/sirbad_logo.png" alt="Sirbad Belgelendirme" class="h-12">
+      </div>
+      <!-- Hamburger Menü Butonu (Küçük Ekranlar İçin) -->
+      <button id="menu-toggle" class="md:hidden text-white focus:outline-none p-2" aria-expanded="false">
+        <svg class="h-6 w-6 hamburger-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+        <svg class="h-6 w-6 close-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <!-- Navigasyon Listesi -->
+      <ul id="nav-menu" class="hidden flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-6">
+        <li><a href="index.html" class="text-white hover:bg-white/10 hover:backdrop-blur-xl hover:scale-110 transition-all duration-100 ease-in px-3 py-2 rounded-xl flex items-center">Anasayfa</a></li>
+        <li class="relative">
+          <button id="dropdown-toggle-kurumsal" class="text-white hover:bg-white/10 hover:backdrop-blur-xl hover:scale-110 transition-all duration-100 ease-in-out px-3 py-2 rounded-xl flex items-center" aria-haspopup="true" aria-expanded="false">
+            Kurumsal
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <ul id="dropdown-menu-kurumsal" class="hidden absolute bg-white/80 backdrop-blur-lg border border-white/20 rounded-lg mt-2 w-40 shadow-lg z-50 overflow-hidden">
+            <li><a href="hakkimizda.html" class="block px-4 py-2 text-blue-400 hover:bg-blue-300 hover:text-white rounded">Hakkımızda</a></li>
+            <li><a href="hizmetler.html" class="block px-4 py-2 text-blue-400 hover:bg-blue-300 hover:text-white rounded">Hizmetler</a></li>
+            <li><a href="documents.html" class="block px-4 py-2 text-blue-400 hover:bg-blue-300 hover:text-white rounded">Dökümanlar</a></li>
+            <li><a href="#" class="block px-4 py-2 text-blue-400 hover:bg-blue-300 hover:text-white rounded">Referanslar</a></li>
+          </ul>
+        </li>
+        <li class="relative">
+          <button id="dropdown-toggle-rapor" class="text-white hover:bg-white/10 hover:backdrop-blur-xl hover:scale-110 transition-all duration-100 ease-in-out px-3 py-2 rounded-xl flex items-center" aria-haspopup="true" aria-expanded="false">
+            Rapor
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <ul id="dropdown-menu-rapor" class="hidden absolute bg-white/80 backdrop-blur-lg border border-white/20 rounded-lg mt-2 w-40 shadow-lg overflow-hidden">
+            <li><a href="#" class="block px-4 py-2 text-blue-400 hover:bg-blue-300 hover:text-white rounded">Asansör Raporu</a></li>
+            <li><a href="#" class="block px-4 py-2 text-blue-400 hover:bg-blue-300 hover:text-white rounded">İş Ekipman Raporu</a></li>
+          </ul>
+        </li>
+        <li><a href="#" class="text-white hover:bg-white/10 hover:backdrop-blur-xl hover:scale-110 transition-all duration-100 ease-in px-3 py-2 rounded-xl flex items-center">İletişim</a></li>
+      </ul>
+    </nav>
+  </section>
+  <main class="pt-48 pb-32 w-full">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <!-- Başlık -->
+      <div class="text-center mb-16 border-b-2 border-white">
+        <h1 class="text-4xl text-gray-200 md:text-5xl font-bold mb-4">Dokümanlar</h1>
+        <div class="w-24 h-1 bg-blue-400 mx-auto"></div>
+      </div>
+
+      <!-- Doküman Kategorileri -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <!-- Kategori 1 -->
+        <div class="bg-white/30 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center mb-4">
+            <span class="material-icons text-blue-600 !text-4xl mr-4">description</span>
+            <h2 class="text-xl font-bold text-gray-800">Akreditasyon Belgeleri</h2>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-center">
+              <span class="material-icons text-red-500 mr-2">picture_as_pdf</span>
+              <a href="/docs/akreditasyon-belgesi.pdf" class="text-gray-700 hover:text-white hover:underline" download target="_blank">TÜRKAK Akreditasyon Belgesi</a>
+            </li>
+            <li class="flex items-center">
+              <span class="material-icons text-blue-300 mr-2">picture_as_pdf</span>
+              <a href="/docs/kapsam-belgesi.pdf" class="text-gray-200 hover:text-blue-300 hover:underline" download target="_blank">Akreditasyon Kapsamı</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kategori 2 -->
+        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center mb-4">
+            <span class="material-icons text-blue-400 text-4xl mr-4">engineering</span>
+            <h2 class="text-xl font-bold text-gray-800">Asansör Dokümanları</h2>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-center">
+              <span class="material-icons text-blue-300 mr-2">picture_as_pdf</span>
+              <a href="/docs/asansor-yonetmeligi.pdf" class="text-gray-200 hover:text-blue-300 hover:underline" download target="_blank">Asansör İşletme ve Bakım Yönetmeliği</a>
+            </li>
+            <li class="flex items-center">
+              <span class="material-icons text-blue-300 mr-2">picture_as_pdf</span>
+              <a href="/docs/muayene-basvuru-formu.pdf" class="text-gray-200 hover:text-blue-300 hover:underline" download target="_blank">Asansör Muayene Başvuru Formu</a>
+            </li>
+            <li class="flex items-center">
+              <span class="material-icons text-blue-300 mr-2">picture_as_pdf</span>
+              <a href="/docs/periyodik-kontrol-talimati.pdf" class="text-gray-200 hover:text-blue-300 hover:underline" download target="_blank">Periyodik Kontrol Talimatı</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kategori 3 -->
+        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center mb-4">
+            <span class="material-icons text-blue-400 text-4xl mr-4">build</span>
+            <h2 class="text-xl font-bold text-gray-800">İş Ekipmanları</h2>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-center">
+              <span class="material-icons text-blue-300 mr-2">picture_as_pdf</span>
+              <a href="/docs/is-ekipmanlari-yonetmeligi.pdf" class="text-gray-200 hover:text-blue-300 hover:underline" download target="_blank">İş Ekipmanları Yönetmeliği</a>
+            </li>
+            <li class="flex items-center">
+              <span class="material-icons text-blue-300 mr-2">picture_as_pdf</span>
+              <a href="/docs/ekipman-basvuru-formu.pdf" class="text-gray-200 hover:text-blue-300 hover:underline" download target="_blank">Kontrol Başvuru Formu</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kategori 4 -->
+        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center mb-4">
+            <span class="material-icons text-blue-400 text-4xl mr-4">gavel</span>
+            <h2 class="text-xl font-bold text-gray-800">Yasal Mevzuat</h2>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-center">
+              <span class="material-icons text-blue-300 mr-2">picture_as_pdf</span>
+              <a href="/docs/is-sagligi-kanunu.pdf" class="text-gray-200 hover:text-blue-300 hover:underline" download target="_blank">6331 Sayılı İş Sağlığı Kanunu</a>
+            </li>
+            <li class="flex items-center">
+              <span class="material-icons text-blue-300 mr-2">picture_as_pdf</span>
+              <a href="/docs/asansor-yonetmeligi-resmi.pdf" class="text-gray-200 hover:text-blue-300 hover:underline" download target="_blank">Asansör Yönetmeliği (Resmi Gazete)</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kategori 5 -->
+        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center mb-4">
+            <span class="material-icons text-blue-400 text-4xl mr-4">assignment</span>
+            <h2 class="text-xl font-bold text-gray-800">Başvuru Formları</h2>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-center">
+              <span class="material-icons text-blue-300 mr-2">picture_as_pdf</span>
+              <a href="/docs/genel-basvuru-formu.pdf" class="text-gray-200 hover:text-blue-300 hover:underline" download target="_blank">Genel Başvuru Formu</a>
+            </li>
+            <li class="flex items-center">
+              <span class="material-icons text-blue-300 mr-2">picture_as_pdf</span>
+              <a href="/docs/teknik-sartname.pdf" class="text-gray-200 hover:text-blue-300 hover:underline" download target="_blank">Teknik Şartname Örneği</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kategori 6 -->
+        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center mb-4">
+            <span class="material-icons text-blue-400 text-4xl mr-4">help</span>
+            <h2 class="text-xl font-bold text-gray-800">Sık Sorulan Sorular</h2>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-center">
+              <span class="material-icons text-blue-300 mr-2">picture_as_pdf</span>
+              <a href="/docs/sss-asansor.pdf" class="text-gray-200 hover:text-blue-300 hover:underline" download target="_blank">Asansör SSS</a>
+            </li>
+            <li class="flex items-center">
+              <span class="material-icons text-blue-300 mr-2">picture_as_pdf</span>
+              <a href="/docs/sss-is-ekipmanlari.pdf" class="text-gray-200 hover:text-blue-300 hover:underline" download target="_blank">İş Ekipmanları SSS</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bilgilendirme -->
+      <div class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl p-6 mb-16">
+        <div class="flex items-start">
+          <span class="material-icons text-yellow-300 text-3xl mr-4">info</span>
+          <div>
+            <h3 class="text-xl font-bold text-gray-200 mb-2">Dokümanlar Hakkında</h3>
+            <p class="text-gray-300">
+              Yukarıdaki dokümanları görüntülemek için PDF ikonuna tıklayabilir, indirmek için sağ tıklayıp "Farklı Kaydet" seçeneğini kullanabilirsiniz. 
+              Güncel olmayan dokümanlar veya eksik belgeler için <a href="iletisim.html" class="text-blue-300 hover:underline">iletişim</a> sayfamızdan bize ulaşabilirsiniz.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="fixed bottom-0 left-0 w-full bg-white/10 backdrop-blur-lg border-t border-white/20 py-4 z-50">
+    <div class="text-center text-white text-sm">
+      © 2023 Sirbad Belgelendirme. Tüm hakları saklıdır.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
